@@ -8,6 +8,8 @@
     margin: auto;
 }
 .card{
-    border: solid black
+    border: solid black;
+    transform-style: preserve-3d;
+    transition: all 0.8s ease;
 }
 
