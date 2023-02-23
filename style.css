@@ -3,7 +3,7 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     width:80%;
-    height: 80vh;
+    height: 100vh;
     position: relative;
     margin: auto;
 }
@@ -13,24 +13,25 @@
     transition: all 0.8s ease;
 }
 .backImg{
-    width:100%;
-    /* height: 100%; */
+    width:40%;
+    height: 50%;
 }
 
 .frontImg{
-    width:100%;
+    width:40%;
+    height: 50%;
 }
 
 .front{
     position: absolute;
-    top: 0;
     backface-visibility: hidden;
+    text-align: center;
 }
 .back{
     position: absolute;
-    top: 0;
     backface-visibility: hidden;
     transform: rotateY(180deg);
+    text-align: center;
 }
 
 .flipCard{
