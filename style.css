@@ -1,0 +1,15 @@
+.mainContainter{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    width:80%;
+    height: 80vh;
+    position: relative;
+    margin: auto;
+}
+.card{
+    border: solid black;
+    transform-style: preserve-3d;
+    transition: all 0.8s ease;
+}
+
