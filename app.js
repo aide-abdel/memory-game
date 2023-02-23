@@ -1,10 +1,12 @@
 const cards = document.getElementsByClassName("card")
 
+
 let numberFlipped = 0;
 let cardsFlipped = [];
 Array.from(cards).forEach(function(card) {
     card.addEventListener('click',()=>{
 
+        console.log(card.getElementsByClassName("back")[0].getElementsByClassName("backImg")[0].src);
 
         if(numberFlipped === 0){
             card.classList.toggle("flipCard");
@@ -12,6 +14,7 @@ Array.from(cards).forEach(function(card) {
             numberFlipped++;
             console.log("First click");
         } else if(numberFlipped === 1){
+            
             card.classList.toggle("flipCard");
             setTimeout(function(){
                 card.classList.toggle("flipCard");
