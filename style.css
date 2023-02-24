@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
-    width:80%;
+    width:40%;
     height: 100vh;
     position: relative;
     margin: auto;
@@ -13,12 +13,12 @@
     transition: all 0.8s ease;
 }
 .backImg{
-    width:40%;
+    width:95%;
     height: 50%;
 }
 
 .frontImg{
-    width:40%;
+    width:95%;
     height: 50%;
 }
 
