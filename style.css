@@ -33,6 +33,18 @@
     transform: rotateY(180deg);
     text-align: center;
 }
+.time{
+    /* border: solid black; */
+    margin-top: 40%;
+    height: 30%;
+    /* background-color: white; */
+    font-size:9em;
+    font-weight: 200;
+    text-align: center;
+    color: rgb(54, 139, 54);
+    background-color: rgb(240, 248, 255,.3);
+    border-radius: 5%;
+}
 
 .flipCard{
     transform: rotateY(180deg);
