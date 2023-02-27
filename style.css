@@ -186,3 +186,15 @@ height: 15%;
     background-image: url("https://t4.ftcdn.net/jpg/05/13/32/99/360_F_513329932_1CHcSjGcNTkQe4t6WsT5ZaGcTfDHvl2q.jpg");
     background-size:contain;
 }
+.bodybg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    /* background-color: white; */
+   background-color: rgb(69, 53, 85);
+    background-size: cover;
+    z-index: -1;
+    opacity: .5;
+}
