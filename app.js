@@ -75,3 +75,49 @@ function shuffle(array) {
   
     return array;
   }
+
+let flippedCards = [];
+let numberMatches = 0;
+let cardClicked = 0;
+let totalAllowedClicks = 100;
+
+cards.forEach(element => {
+   element.id.addEventListener('click',()=>{
+    console.log(numberMatches);
+    totalAllowedClicks--;
+    if(totalAllowedClicks===0){
+        lostGame();
+    }
+    numMatchesHTML.innerText = numberMatches;
+    remainingClicks.innerText = totalAllowedClicks;
+    if(element.flipped === false){
+        element.id.classList.toggle("flipCard");
+        element.flipped= true;
+        if(flippedCards.length === 0){
+            flippedCards.push(element);
+        }else{ // if the array of flipped cards is not empty, i.e. if there is a flipped card already
+            if(flippedCards[0].imgSrc === element.imgSrc){ // if the new flipped card matches the previously flipped card
+                numberMatches++;
+                numMatchesHTML.innerText = numberMatches;
+                if(numberMatches===8){ // if you won game
+                    winGame();
+
+                }
+                flippedCards = [];
+            }else{ // if the new flipped card doesn't match the previsouly flipped card then flip them back
+                setTimeout(function(){
+                    flippedCards[0].id.classList.toggle("flipCard");
+                    element.id.classList.toggle("flipCard");
+                    flippedCards[0].flipped = false;
+                    element.flipped = false;
+                    flippedCards = [];
+                },1000);
+
+            }
+            
+        }
+        
+    }
+
+   }) 
+});
