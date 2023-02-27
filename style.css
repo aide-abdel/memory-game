@@ -109,3 +109,12 @@ height: 15%;
     padding: 10%;
 
 }
+.rightSide{
+    /* border: solid magenta; */
+    width: 30%;
+    margin-top: 2%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-around; */
+   
+}
