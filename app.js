@@ -141,3 +141,28 @@ function startTimer(duration, display) {
     }, 1000);
 
 }
+var audio = new Audio("audio/Wallpaper.mp3");
+window.onload = function () {
+    let fiveMinutes = 60 * 10,
+        display = document.querySelector('#time');
+    startTimer(fiveMinutes, display);
+
+
+};
+
+function lostGame(){
+    const gameHolder = document.getElementById("gameHolder");
+    gameHolder.classList.toggle("lostGame")
+}
+
+function winGame(){
+    const gameHolder = document.getElementById("gameHolder");
+    gameHolder.classList.toggle("winGame");
+}
+
+function playMusic(){
+    audio.play();
+}
+function pauseMusic(){
+    audio.pause();
+}
