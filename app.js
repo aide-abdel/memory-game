@@ -6,82 +6,55 @@ class Card{
     }
 }
 
-const winHolder = document.querySelector(".winHolder");
+const src1 = "images/paras-gg32-gg70.1674069807.jpg";
+const src2 = "images/decidueye-gx-12-149.1606469926.jpg";
+const src3 = "images/garchomp-v-117-189.1663066612.jpg";
+const src4 = "images/gumshoos-gx-110-149.1606470044.jpg";
+const src5 = "images/swablu-gg27-gg70.1674070013.jpg";
+const src6 = "images/tauros-gx-100-149.1606470381.jpg";
+const src7 = "images/umbreon-vmax-095-203.1629403889.jpg";
+const src8 = "images/regieleki-v-057-195-preorder-11-11-2022.1668061168.png";
+const backImgSrc = "images/backPokemonImage.png";
 
-const element1 = document.getElementById("cardOne");
-const element2 = document.getElementById("cardTwo");
-const element3 = document.getElementById("cardThree");
-const element4 = document.getElementById("cardFour");
+const numMatchesHTML = document.getElementById("numMatches");
+const remainingClicks = document.getElementById("remainingClicks");
 
-const element5 = document.getElementById("cardFive");
-const element6 = document.getElementById("cardSix");
-const element7 = document.getElementById("cardSeven");
-const element8 = document.getElementById("cardEight");
+let imagesSources = [src1,src1,src2,src2,src3,src3,src4,src4,src5,src5,src6,src6,src7,src7,src8,src8];
 
-const element9 = document.getElementById("cardNine");
-const element10 = document.getElementById("cardTen");
-const element11 = document.getElementById("cardEleven");
-const element12 = document.getElementById("cardTwelve");
+imagesSources = shuffle(imagesSources);
 
-const element13 = document.getElementById("cardThirteen");
-const element14 = document.getElementById("cardForteen");
-const element15 = document.getElementById("cardFifteen");
-const element16 = document.getElementById("cardSixteen");
+const mainContainer = document.querySelector(".mainContainter");
 
-let cardOne = new Card(element1,element1.getElementsByClassName("back")[0].getElementsByClassName("backImg")[0].src,false);
-let cardTwo = new Card(element2,element2.getElementsByClassName("back")[0].getElementsByClassName("backImg")[0].src,false);
-let cardThree = new Card(element3,element3.getElementsByClassName("back")[0].getElementsByClassName("backImg")[0].src,false);
-let cardFour = new Card(element4,element4.getElementsByClassName("back")[0].getElementsByClassName("backImg")[0].src,false);
+let cards = [];
 
-let cardFive = new Card(element5,element5.getElementsByClassName("back")[0].getElementsByClassName("backImg")[0].src,false);
-let cardSix = new Card(element6,element6.getElementsByClassName("back")[0].getElementsByClassName("backImg")[0].src,false);
-let cardSeven = new Card(element7,element7.getElementsByClassName("back")[0].getElementsByClassName("backImg")[0].src,false);
-let cardEight = new Card(element8,element8.getElementsByClassName("back")[0].getElementsByClassName("backImg")[0].src,false);
+for(let i=0;i<imagesSources.length;i++){
+let card = new Card;
+card.flipped = false;
+let cardDiv = document.createElement("div");
+cardDiv.setAttribute("class","card");
+cardDiv.setAttribute("id","card"+i);
 
-let cardNine = new Card(element9,element9.getElementsByClassName("back")[0].getElementsByClassName("backImg")[0].src,false);
-let cardTen = new Card(element10,element10.getElementsByClassName("back")[0].getElementsByClassName("backImg")[0].src,false);
-let cardEleven = new Card(element11,element11.getElementsByClassName("back")[0].getElementsByClassName("backImg")[0].src,false);
-let cardTwelve = new Card(element12,element12.getElementsByClassName("back")[0].getElementsByClassName("backImg")[0].src,false);
+mainContainer.appendChild(cardDiv);
 
-let cardThirteen = new Card(element13,element13.getElementsByClassName("back")[0].getElementsByClassName("backImg")[0].src,false);
-let cardFourteen = new Card(element14,element14.getElementsByClassName("back")[0].getElementsByClassName("backImg")[0].src,false);
-let cardFifteen = new Card(element15,element15.getElementsByClassName("back")[0].getElementsByClassName("backImg")[0].src,false);
-let cardSixteen = new Card(element16,element16.getElementsByClassName("back")[0].getElementsByClassName("backImg")[0].src,false);
+let divFront = document.createElement("div");
+divFront.setAttribute("class","front");
+cardDiv.appendChild(divFront);
 
-let cards = [cardOne,cardTwo,cardThree,cardFour,cardFive,cardSix,cardSeven,cardEight,cardNine,cardTen,cardEleven,cardTwelve,cardThirteen,cardFourteen,cardFifteen,cardSixteen];
+let imgFront = document.createElement("img");
+imgFront.setAttribute("class","frontImg");
+imgFront.setAttribute("src",backImgSrc);
+divFront.appendChild(imgFront)
 
-let flippedCards = [];
-let numberMatches = 0;
-cards.forEach(element => {
-   element.id.addEventListener('click',()=>{
-    console.log(numberMatches)
-    if(element.flipped === false){
-        element.id.classList.toggle("flipCard");
-        element.flipped= true;
-        if(flippedCards.length === 0){
-            flippedCards.push(element);
-        }else{ // if the array of flipped cards is not empty, i.e. if there is a flipped card already
-            if(flippedCards[0].imgSrc === element.imgSrc){ // if the new flipped card matches the previously flipped card
-                numberMatches++;
-                if(numberMatches===8){ // if you won game
-                    winHolder.classList.toggle("youwin")
+let divBack = document.createElement("div");
+divBack.setAttribute("class","back");
+cardDiv.appendChild(divBack);
 
-                }
-                flippedCards = [];
-            }else{ // if the new flipped card doesn't match the previsouly flipped card then flip them back
-                setTimeout(function(){
-                    flippedCards[0].id.classList.toggle("flipCard");
-                    element.id.classList.toggle("flipCard");
-                    flippedCards[0].flipped = false;
-                    element.flipped = false;
-                    flippedCards = [];
-                },1000);
+let imgBack = document.createElement("img");
+imgBack.setAttribute("class","backImg");
+imgBack.setAttribute("src",imagesSources[i]);
+divBack.appendChild(imgBack);
 
-            }
-            
-        }
-        
-    }
-
-   }) 
-});
+card.imgSrc = imagesSources[i];
+card.id = document.getElementById("card"+i);
+cards.push(card);
+}
