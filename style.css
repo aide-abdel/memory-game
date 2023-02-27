@@ -34,6 +34,51 @@
     text-align: center;
 }
 
+.musicPLayer{
+    /* border: solid magenta; */
+    width: 20%;
+    margin-left: 40%;
+    margin-top: 20%;
+    height: 3.5%;
+    display: flex;
+    justify-content: space-between;
+    /* background-color: wheat; */
+    /* border-radius: 10%; */
+   
+}
+#play{
+    width: 50%;
+    height: 100%;
+    /* margin-top: 7%; */
+    margin-right: 15%;
+
+    /* background-color: wheat; */
+    
+}
+#pause{
+    width: 50%; 
+    /* margin-top: 7%; */
+    /* background-color: wheat; */
+}
+.playIcon{
+    width: 90%;
+    margin-left: 20%;
+    margin-top: 3%;
+}
+.pauseIcon{
+    width: 90%;
+    margin-left: 25%;
+    margin-top: 3%;
+}
+.pauseIcon:hover{
+    width: 100%;
+    cursor: pointer;
+}
+.playIcon:hover{
+    width: 100%;
+    cursor: pointer;
+}
+
 .numMatches{
 /* border: solid green; */
 height: 15%;
