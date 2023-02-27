@@ -58,6 +58,7 @@ card.imgSrc = imagesSources[i];
 card.id = document.getElementById("card"+i);
 cards.push(card);
 }
+
 function shuffle(array) {
     let currentIndex = array.length,  randomIndex;
   
@@ -122,6 +123,10 @@ cards.forEach(element => {
    }) 
 });
 
+
+
+// set Timer
+
 function startTimer(duration, display) {
     var timer = duration, minutes, seconds;
     setInterval(function () {
@@ -166,3 +171,4 @@ function playMusic(){
 function pauseMusic(){
     audio.pause();
 }
+// document.onload =  audio.play();
