@@ -33,6 +33,7 @@
     transform: rotateY(180deg);
     text-align: center;
 }
+
 .time{
     /* border: solid black; */
     margin-top: 40%;
@@ -81,4 +82,17 @@
     justify-content: space-evenly;
     /* background-color: aliceblue;
     border-radius: 5%; */
+}
+.remainingClicks{
+    /* border: solid yellow; */
+    height: 15%;
+    /* background-color: white; */
+    font-size:3.2em;
+    font-weight: 200;
+    text-align: center;
+    color: rgb(54, 139, 54);
+    background-color: rgb(240, 248, 255,.3);
+    border-radius: 3%;
+    padding: 10%;
+
 }
